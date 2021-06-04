@@ -66,9 +66,9 @@ class MainActivity : AppCompatActivity() {
             var diffX = moveEvent?.x?.minus(downEvent!!.x) ?: 0.0F
             var diffY = moveEvent?.y?.minus(downEvent!!.y) ?: 0.0F
 
-            return if (Math.abs(diffX) > Math.abs(diffY)) {
+            return if (abs(diffX) > abs(diffY)) {
                 // this is a left or right swipe
-                if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
+                if (abs(diffX) > SWIPE_THRESHOLD && abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
                     if (diffX > 0 ) {
                         // right swipe
                         this@MainActivity.onSwipeRight()
@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
                 }
             } else {
                 // this is either a bottom or top swipe.
-                if (Math.abs(diffY) > SWIPE_THRESHOLD && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
+                if (abs(diffY) > SWIPE_THRESHOLD && abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
                     if (diffY > 0) {
                         this@MainActivity.onSwipeTop()
                     } else {
